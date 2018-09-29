@@ -13,7 +13,7 @@
                 <data
                     android:host="dmsmith.marvel.com"
                     android:scheme="https"
-                    android:path="/comic" />
+                    android:pathPrefix="/comic" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

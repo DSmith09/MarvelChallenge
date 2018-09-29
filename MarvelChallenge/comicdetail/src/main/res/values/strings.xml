@@ -1,1 +1,5 @@
-<resources></resources>
+<resources>
+    <string name="read_now_button">Read Now</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="member_text">Already a member?</string>
+</resources>
