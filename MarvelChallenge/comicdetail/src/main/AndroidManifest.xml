@@ -12,8 +12,8 @@
 
                 <data
                     android:host="dmsmith.marvel.com"
-                    android:pathPattern="/.comic_detail"
-                    android:scheme="https" />
+                    android:scheme="https"
+                    android:path="/comic" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

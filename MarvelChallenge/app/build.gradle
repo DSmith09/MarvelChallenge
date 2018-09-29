@@ -6,13 +6,12 @@ android {
 
 
     defaultConfig {
-        applicationId "com.marvel.dmsmith.marvelchallenge.app"
+        applicationId "com.marvel.dmsmith.marvelchallenge"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
-
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -25,6 +24,7 @@ android {
 }
 
 dependencies {
-    implementation project(':comicdetail')
+    implementation 'com.android.support:multidex:1.0.3'
     implementation project(':base')
+    implementation project(':comicdetail')
 }
