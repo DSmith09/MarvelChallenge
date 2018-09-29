@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.marvel.dmsmith.marvelchallenge.comicdetail.R
+import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.comic_view.view.*
 
 class ComicAdapter(private val context: Context?): RecyclerView.Adapter<ComicViewHolder>() {
-    private lateinit var comicArtworkList: List<String>
+    private lateinit var comics: List<ComicDetails>
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ComicViewHolder {
         val itemView = LayoutInflater.from(context).inflate(R.layout.comic_view, viewGroup, false)
@@ -18,25 +19,25 @@ class ComicAdapter(private val context: Context?): RecyclerView.Adapter<ComicVie
     }
 
     override fun getItemCount(): Int {
-        return comicArtworkList.count()
+        return comics.count()
     }
 
     override fun onBindViewHolder(viewHolder: ComicViewHolder, position: Int) {
-        val imageUrl = comicArtworkList[position]
-        viewHolder.onBind(imageUrl, context)
+        val comic = comics[position]
+        viewHolder.onBind(comic, context)
     }
 
-    fun notifyDataSetChanged(artworkList: List<String>) {
-        comicArtworkList = artworkList
+    fun notifyDataSetChanged(comics: List<ComicDetails>) {
+        this.comics = comics
         notifyDataSetChanged()
     }
 }
 
 class ComicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun onBind(uri: String, context: Context?) {
+    fun onBind(comic: ComicDetails, context: Context?) {
         Picasso.with(context)
-                .load(uri)
+                .load(comic.imageUrl)
                 .into(itemView.comic_image_view)
         itemView.comic_image_view.visibility = View.VISIBLE
         itemView.comic_progress_bar.visibility = View.GONE

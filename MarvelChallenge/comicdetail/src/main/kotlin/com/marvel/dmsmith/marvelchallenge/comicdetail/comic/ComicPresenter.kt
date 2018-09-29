@@ -1,6 +1,7 @@
 package com.marvel.dmsmith.marvelchallenge.comicdetail.comic
 
 import com.marvel.dmsmith.marvelchallenge.App
+import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
 import com.marvel.dmsmith.marvelchallenge.network.MarvelApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -19,29 +20,34 @@ class ComicPresenter: ComicContract.Presenter {
         this.view = null
     }
 
-    override fun fetchComicArtwork(id: Int) {
+    override fun fetchComic(id: Int) {
         api.getComic(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ dataWrapper ->
-                    val comicImage = dataWrapper.data?.results?.let { comics ->
-                        comics.first().images?.first()
-                    }
+                    val comic = dataWrapper.data?.results?.let { it.first() }
+                    val comicImage = comic?.images?.let { it.first() }
                     val imageUrl = "${comicImage?.path}.${comicImage?.extension}".
-                        replace("http", "https")
-                    view?.displayComicArtwork(imageUrl)
+                            replace("http", "https")
+
+                    val comicDetails = ComicDetails(title = comic?.title,
+                                                    imageUrl = imageUrl,
+                                                    description = comic?.description,
+                                                    creators = comic?.creators
+                            )
+                    view?.displayComic(comicDetails)
                 }, { error ->
                     view?.displayError(error.localizedMessage)
                     view?.loadComics()
                 })
     }
 
-    override fun fetchComicsArtwork() {
+    override fun fetchComics() {
         api.getComics()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ dataWrapper ->
-                    val results = ArrayList<String>()
+                    val results = ArrayList<ComicDetails>()
                     dataWrapper.data?.results?.let { comics ->
                         comics.forEach { comic ->
                             comic.images?.let { images ->
@@ -49,7 +55,11 @@ class ComicPresenter: ComicContract.Presenter {
                                     val comicImage = images.first()
                                     val imageUrl = "${comicImage.path}.${comicImage.extension}".
                                             replace("http", "https")
-                                    results.add(imageUrl)
+                                    val comicDetails = ComicDetails(title = comic.title,
+                                                                    imageUrl = imageUrl,
+                                                                    description = comic.description,
+                                                                    creators = comic.creators)
+                                    results.add(comicDetails)
                                 }
                             }
                         }
