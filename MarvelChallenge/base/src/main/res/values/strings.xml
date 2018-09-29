@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">MarvelChallenge</string>
+    <string name="app_name">Marvel Unlimited</string>
+    <string name="marvel_api_key_name">apikey</string>
+    <string name="marvel_api_key">cafc7c4672acf5b119d3774f1138b7db</string>
+    <string name="marvel_header_referer_key">Referer</string>
+    <string name="marvel_header_referer_value">https://developer.marvel.com/docs</string>
 </resources>

@@ -1,6 +1,6 @@
-package com.marvel.dmsmith.marvelchallenge.base.models
+package com.marvel.dmsmith.marvelchallenge.models
 
-data class CharacterSummary(
+data class CreatorSummary(
         val resourceURI: String?,
         val name: String?,
         val role: String?

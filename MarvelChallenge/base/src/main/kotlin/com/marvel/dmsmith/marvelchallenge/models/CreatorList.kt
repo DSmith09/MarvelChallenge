@@ -1,4 +1,4 @@
-package com.marvel.dmsmith.marvelchallenge.base.models
+package com.marvel.dmsmith.marvelchallenge.models
 
 data class CreatorList(
         val available: Int?,

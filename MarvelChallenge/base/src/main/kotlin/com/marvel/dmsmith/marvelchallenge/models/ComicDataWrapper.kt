@@ -1,11 +1,11 @@
-package com.marvel.dmsmith.marvelchallenge.base.models
+package com.marvel.dmsmith.marvelchallenge.models
 
-data class CharacterDataWrapper(
+data class ComicDataWrapper(
         val code: Int?,
         val status: String?,
         val copyright: String?,
         val attributionText: String?,
         val attributionHTML: String?,
-        val data: CharacterDataContainer?,
+        val data: ComicDataContainer?,
         val etag: String?
 )
