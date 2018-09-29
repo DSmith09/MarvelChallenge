@@ -2,7 +2,7 @@ package com.marvel.dmsmith.marvelchallenge.comicdetail
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.marvel.dmsmith.marvelchallenge.MarvelApi
+import com.marvel.dmsmith.marvelchallenge.network.MarvelApi
 import com.marvel.dmsmith.marvelchallenge.app
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

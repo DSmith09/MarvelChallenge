@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.*
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import com.marvel.dmsmith.marvelchallenge.network.MarvelApi
 import okhttp3.OkHttpClient
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware

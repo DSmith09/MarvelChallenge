@@ -1,4 +1,4 @@
-package com.marvel.dmsmith.marvelchallenge
+package com.marvel.dmsmith.marvelchallenge.network
 
 import com.marvel.dmsmith.marvelchallenge.models.CharacterDataWrapper
 import com.marvel.dmsmith.marvelchallenge.models.ComicDataWrapper
