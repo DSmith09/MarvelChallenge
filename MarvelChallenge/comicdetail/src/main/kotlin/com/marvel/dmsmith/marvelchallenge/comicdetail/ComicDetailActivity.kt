@@ -11,7 +11,13 @@ class ComicDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_comic_detail)
 
         val uri = intent.data
-        val comicId = uri.getQueryParameter("id").toInt()
+
+        val comicId = if (uri != null && uri.queryParameterNames.contains("id")) {
+            val id = uri.getQueryParameter("id")
+            id.toIntOrNull() ?: 0
+        } else {
+            0
+        }
 
         supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, ComicViewFragment.newInstance(comicId))

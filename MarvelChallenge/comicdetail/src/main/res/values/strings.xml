@@ -1,5 +1,11 @@
 <resources>
+    <!-- DETAILS VIEW: START -->
     <string name="read_now_button">Read Now</string>
     <string name="sign_in_button">Sign In</string>
     <string name="member_text">Already a member?</string>
+
+    <string name="description_label">Description: %s</string>
+    <string name="publish_date_label">Publish Date: %s</string>
+    <string name="creators_label">Creators: %s</string>
+    <!-- DETAILS VIEW: END -->
 </resources>

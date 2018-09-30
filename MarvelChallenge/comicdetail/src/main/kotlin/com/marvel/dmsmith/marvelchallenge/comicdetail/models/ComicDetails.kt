@@ -7,5 +7,6 @@ data class ComicDetails(
         val title: String?,
         val creators: CreatorList?,
         val description: String?,
-        val imageUrl: String?
+        val imageUrl: String?,
+        val pubDate: String?
 ): Serializable

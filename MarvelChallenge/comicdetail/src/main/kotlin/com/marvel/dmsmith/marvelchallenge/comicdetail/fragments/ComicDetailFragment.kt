@@ -2,13 +2,14 @@ package com.marvel.dmsmith.marvelchallenge.comicdetail.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.marvel.dmsmith.marvelchallenge.comicdetail.ComicDetailActivity
 import com.marvel.dmsmith.marvelchallenge.comicdetail.R
 import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
+import com.marvel.dmsmith.marvelchallenge.comicdetail.util.ComicDetailUtil
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.comic_detail_view.*
 
 class ComicDetailFragment: Fragment() {
@@ -35,10 +36,15 @@ class ComicDetailFragment: Fragment() {
 
     private fun populateView() {
         val comic = arguments?.getSerializable(COMIC_KEY) as? ComicDetails
-        (activity as? ComicDetailActivity)?.setActionBarTitle(comic?.title) // Title
 
-        Log.e("COMIC DETAILS VIEW", "Comic Description is: ${comic?.description}")
-        comic_progress_bar.visibility = View.GONE
-        comic_description.visibility = View.VISIBLE
+        (activity as? ComicDetailActivity)?.setActionBarTitle(comic?.title)
+
+        Picasso.with(context)
+                .load(comic?.imageUrl)
+                .into(comic_image_view)
+
+        comic_description.text = getString(R.string.description_label, comic?.description ?: "")
+        comic_pub_date.text = getString(R.string.publish_date_label, ComicDetailUtil.formatPublishDate(comic?.pubDate))
+        comic_authors.text = getString(R.string.creators_label, "\n${ComicDetailUtil.formatCreators(comic?.creators)}")
     }
 }
