@@ -3,6 +3,7 @@ package com.marvel.dmsmith.marvelchallenge.comicdetail.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.PagerSnapHelper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -67,8 +68,10 @@ class ComicViewFragment: Fragment(), ComicContract.View {
     }
 
     override fun loadComics() {
-        comic_recycler_view.layoutManager = LinearLayoutManager(context)
+        comic_recycler_view.layoutManager = LinearLayoutManager(context,
+                LinearLayoutManager.HORIZONTAL, false)
         comic_recycler_view.adapter = ComicAdapter(context)
+        PagerSnapHelper().apply { attachToRecyclerView(comic_recycler_view) }
         presenter.fetchComics()
     }
 
