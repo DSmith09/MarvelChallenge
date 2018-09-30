@@ -7,11 +7,15 @@
 
     <ImageView
         android:id="@+id/comic_image_view"
-        android:layout_width="130dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginStart="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/comic_description"
+        app:layout_constraintEnd_toStartOf="@+id/read_now_button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -27,7 +31,7 @@
 
     <TextView
         android:id="@+id/member_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/member_text"
         android:textSize="12sp"
@@ -47,12 +51,12 @@
 
     <TextView
         android:id="@+id/comic_description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/comic_image_view"
+        app:layout_constraintStart_toStartOf="@id/comic_image_view"
+        app:layout_constraintEnd_toEndOf="@id/sign_in_button"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum augue sed faucibus vulputate. Quisque nec aliquam velit, sit amet viverra arcu. Suspendisse viverra dui vitae lacus tristique," />
 

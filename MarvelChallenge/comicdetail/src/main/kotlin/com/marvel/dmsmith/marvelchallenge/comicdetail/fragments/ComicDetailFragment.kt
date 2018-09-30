@@ -43,6 +43,7 @@ class ComicDetailFragment: Fragment() {
 
         Picasso.with(context)
                 .load(comic?.imageUrl)
+                .fit()
                 .into(comic_image_view)
 
         comic_description.text = getString(R.string.description_label, comic?.description ?: "")
