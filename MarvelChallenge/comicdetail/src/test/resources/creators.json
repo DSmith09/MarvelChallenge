@@ -1,0 +1,17 @@
+{
+  "available": 2,
+  "collectionURI": "http://gateway.marvel.com/v1/public/comics/20956/creators",
+  "items": [
+    {
+      "resourceURI": "http://gateway.marvel.com/v1/public/creators/222",
+      "name": "Paul Gulacy",
+      "role": "penciller (cover)"
+    },
+    {
+      "resourceURI": "http://gateway.marvel.com/v1/public/creators/55",
+      "name": "Paul Jenkins",
+      "role": "writer"
+    }
+  ],
+  "returned": 2
+}

@@ -2,10 +2,12 @@ package com.marvel.dmsmith.marvelchallenge.comicdetail.comic
 
 import com.marvel.dmsmith.marvelchallenge.comicdetail.api.MockApi
 import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
+import com.marvel.dmsmith.marvelchallenge.comicdetail.rule.RxImmediateSchedulerRule
 import com.marvel.dmsmith.marvelchallenge.network.MarvelApi
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -13,6 +15,10 @@ import org.kodein.di.generic.bind
 import org.kodein.di.generic.provider
 
 class ComicPresenterTest: KodeinAware {
+
+    @Rule
+    @JvmField
+    var testSchedulerRule = RxImmediateSchedulerRule()
 
     override val kodein: Kodein = Kodein {
         bind<MarvelApi>() with provider { MockApi() }
@@ -36,7 +42,7 @@ class ComicPresenterTest: KodeinAware {
 
     @Test
     fun testFetchComic() {
-        presenter.fetchComic(id = 100)
+        presenter.fetchComic(id = MockApi.RequestType.PASS.id)
         assertTrue(mockView.comicDisplayed)
         assertFalse(mockView.comicsDisplayed)
         assertFalse(mockView.shouldLoadComics)
@@ -45,7 +51,7 @@ class ComicPresenterTest: KodeinAware {
 
     @Test
     fun testFetchComic_InvalidId() {
-        presenter.fetchComic(id = 0)
+        presenter.fetchComic(id = MockApi.RequestType.FAIL.id)
         assertFalse(mockView.comicDisplayed)
         assertFalse(mockView.comicsDisplayed)
         assertTrue(mockView.shouldLoadComics)
@@ -82,6 +88,5 @@ private class MockView: ComicContract.View {
         override fun displayError(error: String) {
             errorDisplayed = true
         }
-
     }
 }

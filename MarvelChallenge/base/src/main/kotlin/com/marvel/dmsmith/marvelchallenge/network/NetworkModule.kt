@@ -74,7 +74,7 @@ val NetworkModule: (Context) -> (Kodein.Module) = { context ->
             val builder = GsonBuilder()
                     .registerTypeAdapter(Date::class.java, JsonDeserializer<Date> { json, _, _ ->
                         val date = json?.asString
-                        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss-SSSS", Locale.US)
+                        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss-SSSS", Locale.getDefault())
                         simpleDateFormat.timeZone = TimeZone.getTimeZone("UTC")
                         try {
                             simpleDateFormat.parse(date)

@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.marvel.dmsmith.marvelchallenge.comicdetail.ComicDetailActivity
 import com.marvel.dmsmith.marvelchallenge.comicdetail.R
 import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
@@ -32,6 +33,7 @@ class ComicDetailFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         populateView()
+        setOnClickListeners()
     }
 
     private fun populateView() {
@@ -46,5 +48,15 @@ class ComicDetailFragment: Fragment() {
         comic_description.text = getString(R.string.description_label, comic?.description ?: "")
         comic_pub_date.text = getString(R.string.publish_date_label, ComicDetailUtil.formatPublishDate(comic?.pubDate))
         comic_authors.text = getString(R.string.creators_label, "\n${ComicDetailUtil.formatCreators(comic?.creators)}")
+    }
+
+    private fun setOnClickListeners() {
+        read_now_button.setOnClickListener {
+            Toast.makeText(context, "Read Now Tapped", Toast.LENGTH_SHORT).show()
+        }
+
+        sign_in_button.setOnClickListener {
+            Toast.makeText(context, "Sign In Tapped", Toast.LENGTH_SHORT).show()
+        }
     }
 }

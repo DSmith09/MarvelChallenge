@@ -2,6 +2,7 @@ package com.marvel.dmsmith.marvelchallenge.comicdetail.util
 
 import android.text.format.DateFormat
 import com.marvel.dmsmith.marvelchallenge.models.CreatorList
+import java.text.SimpleDateFormat
 import java.util.*
 
 object ComicDetailUtil {
@@ -16,7 +17,11 @@ object ComicDetailUtil {
     }
 
     fun formatPublishDate(publishDate: String?): String {
-        if (publishDate == null) return ""
-        return DateFormat.format("MMM d, yyyy", Date(publishDate)) as String
+        return try {
+            val simpleDateFormat = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
+            simpleDateFormat.format(Date(publishDate))
+        } catch (e: Exception) {
+            ""
+        }
     }
 }

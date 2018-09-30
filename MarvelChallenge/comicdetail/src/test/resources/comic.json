@@ -1,0 +1,168 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2018 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2018 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2018 MARVEL</a>",
+  "etag": "d505bb96ffa5a6bed2eccfd7c27c759016ded561",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 1,
+    "count": 1,
+    "results": [
+      {
+        "id": 67034,
+        "digitalId": 0,
+        "title": "Spider-Man (2016) #240",
+        "issueNumber": 240,
+        "variantDescription": "",
+        "description": "THE END OF AN ERA FOR MILES MORALES! Marvel Comics proudly presents the final issue of Bendis’ epic (bio-electric) run! Over seven years and across two universes, Miles Morales has been an Ultimate, a Web-Warrior, an Avenger and a Champion. A New Yorker, a student, a son and a friend. And whenever the city needed him (and one time when all of reality needed him), he was always SPIDER-MAN. Don’t miss the chance to see comics superstar Brian Michael Bendis bid farewell to one of his most beloved creations, and to glimpse what the future may hold for Miles Morales.",
+        "modified": "2018-04-25T16:08:04-0400",
+        "isbn": "",
+        "upc": "75960608812624011",
+        "diamondCode": "MAR180878",
+        "ean": "",
+        "issn": "1548-5056",
+        "format": "Comic",
+        "pageCount": 32,
+        "textObjects": [
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "THE END OF AN ERA FOR MILES MORALES! Marvel Comics proudly presents the final issue of Bendis’ epic (bio-electric) run! Over seven years and across two universes, Miles Morales has been an Ultimate, a Web-Warrior, an Avenger and a Champion. A New Yorker, a student, a son and a friend. And whenever the city needed him (and one time when all of reality needed him), he was always SPIDER-MAN. Don’t miss the chance to see comics superstar Brian Michael Bendis bid farewell to one of his most beloved creations, and to glimpse what the future may hold for Miles Morales."
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/67034",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/67034/spider-man_2016_240?utm_campaign=apiRef&utm_source=cafc7c4672acf5b119d3774f1138b7db"
+          },
+          {
+            "type": "purchase",
+            "url": "http://comicstore.marvel.com/Spider-Man-240/digital-comic/47935?utm_campaign=apiRef&utm_source=cafc7c4672acf5b119d3774f1138b7db"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/20508",
+          "name": "Spider-Man (2016 - 2018)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "2018-05-02T00:00:00-0400"
+          },
+          {
+            "type": "focDate",
+            "date": "2018-04-09T00:00:00-0400"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 3.99
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/e/80/5ae0cee2bb630",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/e/80/5ae0cee2bb630",
+            "extension": "jpg"
+          },
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/50/5a96ff25de946",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 8,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/67034/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12998",
+              "name": "Oscar Bazaldua",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/9408",
+              "name": "Sara Pichelli",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/24",
+              "name": "Brian Michael Bendis",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+              "name": "Nick Lowe",
+              "role": "editor"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/11610",
+              "name": "David Marquez",
+              "role": "penciler (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12980",
+              "name": "Vc Cory Petit",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/360",
+              "name": "Justin Ponsor",
+              "role": "colorist (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/582",
+              "name": "Brian Reber",
+              "role": "colorist"
+            }
+          ],
+          "returned": 8
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/67034/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1016181",
+              "name": "Spider-Man (Miles Morales)"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 2,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/67034/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/145247",
+              "name": "cover from Spider-Man (2017) #240",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/145248",
+              "name": "story from Spider-Man (2017) #240",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 2
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/67034/events",
+          "items": [],
+          "returned": 0
+        }
+      }
+    ]
+  }
+}
