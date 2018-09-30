@@ -6,14 +6,13 @@ import com.marvel.dmsmith.marvelchallenge.network.NetworkModule
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 
+// Extension For Application Class
 val Context.app: App
-    get() = App.instance
+    get() = this.applicationContext as App
 
 class App: Application(), KodeinAware {
 
     companion object {
-        lateinit var instance: App
-            private set
         lateinit var apiKeyName: String
             private set
         lateinit var apiKeyValue: String
@@ -26,7 +25,6 @@ class App: Application(), KodeinAware {
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
         apiKeyValue = getString(R.string.marvel_api_key)
         apiKeyName = getString(R.string.marvel_api_key_name)
         refererKey = getString(R.string.marvel_header_referer_key)
@@ -35,6 +33,6 @@ class App: Application(), KodeinAware {
 
     // Kodein Container
     override val kodein: Kodein = Kodein.lazy {
-        import(NetworkModule(App.instance))
+        import(NetworkModule(applicationContext))
     }
 }

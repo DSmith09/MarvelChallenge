@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.marvel.dmsmith.marvelchallenge.app
 import com.marvel.dmsmith.marvelchallenge.comicdetail.ComicDetailActivity
 import com.marvel.dmsmith.marvelchallenge.comicdetail.R
 import com.marvel.dmsmith.marvelchallenge.comicdetail.adapter.ComicAdapter
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.comic_view.*
 
 class ComicViewFragment: Fragment(), ComicContract.View {
 
-    private val presenter: ComicPresenter by lazy { ComicPresenter(context!!) }
+    private val presenter: ComicPresenter by lazy { ComicPresenter(context!!.app.kodein) }
 
     companion object {
         private const val COMIC_KEY = "comic_key"

@@ -1,17 +1,18 @@
 package com.marvel.dmsmith.marvelchallenge.comicdetail.comic
 
-import android.content.Context
-import com.marvel.dmsmith.marvelchallenge.app
 import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
 import com.marvel.dmsmith.marvelchallenge.network.MarvelApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
 import org.kodein.di.generic.instance
 
-class ComicPresenter(private val context: Context): ComicContract.Presenter {
+class ComicPresenter(override val kodein: Kodein): ComicContract.Presenter, KodeinAware {
 
-    var view: ComicContract.View? = null
-    private val api: MarvelApi by context.app.kodein.instance()
+    private val api: MarvelApi by instance()
+
+    private var view: ComicContract.View? = null
 
     override fun attach(view: ComicContract.View) {
         this.view = view
