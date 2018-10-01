@@ -10,8 +10,8 @@ Implement New Comic Detail Screen
 
 ## Implementation
   - I chose Kotlin as the language for pragmatic functional support. It allows me to use inline functions to keep code concise and simplistic while also being performant.
-    - With the exception to Retrofit, I was able to remove all dependencies on the annotation processor, which allows for faster compilation
-    - With inline lazy loading, I was able to improve app performance by loading objects only when necessary
+    - With the exception to Retrofit, I was able to remove all dependencies on the annotation processor, which allows for faster compilation with gradle
+    - With lazy loading (using the **by lazy** delegated property), I was able to improve app performance by loading objects only when necessary
   
   - For my implementation I decided to use the following frameworks:
     - [Retrofit](https://square.github.io/retrofit/)
