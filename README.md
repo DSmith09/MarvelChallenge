@@ -1,4 +1,4 @@
-# MarvelChallenge
+# Marvel Unlimited Challenge
 
 ## Task
 Implement New Comic Detail Screen
@@ -27,7 +27,7 @@ Implement New Comic Detail Screen
      - App follows single activity implementation, fragments are loaded into the fragment_container when needed
    - App loads ComicViewFragment onCreate... ComicViewFragment will display comic retrieved from **id** parameter
      - If parameter is null or invalid, ComicViewFragment will load page of comics with image from Marvel's API
-   - User can tap on renderered comic view, tapping on renderered view will load ComicDetailFragment
+   - User can tap on rendered comic view, tapping on rendered view will load ComicDetailFragment
    - ComicDetailFragment will display following comic information:
      - Comic Image
      - Comic Description (If available)
