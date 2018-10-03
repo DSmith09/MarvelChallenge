@@ -2,11 +2,12 @@ package com.marvel.dmsmith.marvelchallenge.comicdetail.util
 
 import com.google.gson.Gson
 import com.marvel.dmsmith.marvelchallenge.models.CreatorList
-import org.junit.Test
 import org.junit.Assert.assertEquals
+import org.junit.Test
 import java.io.File
 
-class ComicDetailUtilTest {
+class CreatorListExtensionsTest {
+
     private val gson = Gson()
 
     private val creators: CreatorList by lazy {
@@ -27,38 +28,14 @@ class ComicDetailUtilTest {
     }
 
     @Test
-    fun testFormatPublishDate() {
-        val result = ComicDetailUtil.formatPublishDate("Sun Dec 30 19:00:00 EST 2029")
-        assertEquals("Dec 30, 2029", result)
-    }
-
-    @Test
-    fun testFormatPublishDate_Null() {
-        val result = ComicDetailUtil.formatPublishDate(null)
-        assertEquals("", result)
-    }
-
-    @Test
-    fun testFormatPublishDate_InvalidDate() {
-        val result = ComicDetailUtil.formatPublishDate("foo")
-        assertEquals("", result)
-    }
-
-    @Test
-    fun testFormatCreators() {
-        val result = ComicDetailUtil.formatCreators(creators)
+    fun testFormat() {
+        val result = creators.formatList()
         assertEquals(expectedCreatorsString, result)
     }
 
     @Test
-    fun testFormatCreators_Null() {
-        val result = ComicDetailUtil.formatCreators(null)
-        assertEquals("", result)
-    }
-
-    @Test
-    fun testFormatCreators_EmptyCreatorList() {
-        val result = ComicDetailUtil.formatCreators(emptyCreators)
+    fun testFormat_EmptyItems() {
+        val result = emptyCreators.formatList()
         assertEquals("", result)
     }
 }

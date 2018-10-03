@@ -9,7 +9,8 @@ import android.widget.Toast
 import com.marvel.dmsmith.marvelchallenge.comicdetail.ComicDetailActivity
 import com.marvel.dmsmith.marvelchallenge.comicdetail.R
 import com.marvel.dmsmith.marvelchallenge.comicdetail.models.ComicDetails
-import com.marvel.dmsmith.marvelchallenge.comicdetail.util.ComicDetailUtil
+import com.marvel.dmsmith.marvelchallenge.comicdetail.util.formatDate
+import com.marvel.dmsmith.marvelchallenge.comicdetail.util.formatList
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.comic_detail_view.*
 
@@ -47,8 +48,8 @@ class ComicDetailFragment: Fragment() {
                 .into(comic_image_view)
 
         comic_description.text = getString(R.string.description_label, comic?.description ?: "")
-        comic_pub_date.text = getString(R.string.publish_date_label, ComicDetailUtil.formatPublishDate(comic?.pubDate))
-        comic_authors.text = getString(R.string.creators_label, "\n${ComicDetailUtil.formatCreators(comic?.creators)}")
+        comic_pub_date.text = getString(R.string.publish_date_label, comic?.pubDate?.formatDate() ?: "")
+        comic_authors.text = getString(R.string.creators_label, "\n${ comic?.creators?.formatList() ?: "" }")
     }
 
     private fun setOnClickListeners() {
