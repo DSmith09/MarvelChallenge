@@ -49,7 +49,7 @@ class ComicDetailFragment: Fragment() {
 
         comic_description.text = getString(R.string.description_label, comic?.description ?: "")
         comic_pub_date.text = getString(R.string.publish_date_label, comic?.pubDate?.formatDate() ?: "")
-        comic_authors.text = getString(R.string.creators_label, "\n${ comic?.creators?.formatList() ?: "" }")
+        comic_authors.text = getString(R.string.creators_label, comic?.creators?.formatList() ?: "")
     }
 
     private fun setOnClickListeners() {
@@ -59,6 +59,10 @@ class ComicDetailFragment: Fragment() {
 
         sign_in_button.setOnClickListener {
             Toast.makeText(context, "Sign In Tapped", Toast.LENGTH_SHORT).show()
+        }
+
+        recommended_series_button.setOnClickListener {
+            Toast.makeText(context, "Recommended Series Tapped", Toast.LENGTH_SHORT).show()
         }
     }
 }

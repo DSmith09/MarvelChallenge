@@ -5,80 +5,120 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/comic_image_view"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/details_fixed_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/comic_image_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintDimensionRatio="2:3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/read_now_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/read_now_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/colorAccent"
+            android:text="@string/read_now_button"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/comic_image_view" />
+
+        <TextView
+            android:id="@+id/member_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/member_text"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/read_now_button"
+            app:layout_constraintTop_toBottomOf="@id/read_now_button" />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/sign_in_button"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="@id/member_text_view"
+            app:layout_constraintTop_toBottomOf="@id/member_text_view" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/details_scroll_view"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/comic_description"
-        app:layout_constraintEnd_toStartOf="@+id/read_now_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/read_now_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:background="@color/colorAccent"
-        android:text="@string/read_now_button"
-        android:textColor="@color/colorWhite"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/comic_image_view" />
-
-    <TextView
-        android:id="@+id/member_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/member_text"
-        android:textSize="12sp"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintLeft_toLeftOf="@id/read_now_button"
-        app:layout_constraintTop_toBottomOf="@id/read_now_button"/>
-
-    <Button
-        android:id="@+id/sign_in_button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
         android:background="@color/colorPrimary"
-        android:text="@string/sign_in_button"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintTop_toBottomOf="@id/member_text_view"
-        app:layout_constraintLeft_toLeftOf="@id/member_text_view" />
-
-    <TextView
-        android:id="@+id/comic_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/comic_image_view"
-        app:layout_constraintEnd_toEndOf="@id/sign_in_button"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum augue sed faucibus vulputate. Quisque nec aliquam velit, sit amet viverra arcu. Suspendisse viverra dui vitae lacus tristique," />
+        app:layout_constraintEnd_toEndOf="@id/details_fixed_view"
+        app:layout_constraintStart_toStartOf="@id/details_fixed_view"
+        app:layout_constraintTop_toBottomOf="@id/details_fixed_view">
 
-    <TextView
-        android:id="@+id/comic_pub_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        tools:text="Publish Date: "
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/comic_description"
-        app:layout_constraintLeft_toLeftOf="@id/comic_description" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
 
-    <TextView
-        android:id="@+id/comic_authors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        tools:text="Creators: "
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/comic_pub_date"
-        app:layout_constraintLeft_toLeftOf="@id/comic_pub_date"/>
+            <TextView
+                android:id="@+id/comic_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="The Story\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum augue sed faucibus vulputate. Quisque nec aliquam velit, sit amet viverra arcu. Suspendisse viverra dui vitae lacus tristique," />
 
+            <TextView
+                android:id="@+id/comic_authors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintStart_toStartOf="@id/comic_description"
+                app:layout_constraintTop_toBottomOf="@id/comic_description"
+                tools:text="Creators" />
+
+            <TextView
+                android:id="@+id/comic_pub_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintStart_toStartOf="@id/comic_authors"
+                app:layout_constraintTop_toBottomOf="@id/comic_authors"
+                tools:text="Published:" />
+
+            <Button
+                android:id="@+id/recommended_series_button"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@color/colorWhite"
+                android:text="@string/recommended_series"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/comic_pub_date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
