@@ -43,5 +43,5 @@ Implement New Comic Detail Screen
 ## Challenges
   - On rendering the ComicViewFragment, the data takes a bit to load content in parsing through the Marvel JSON response. This process for retrieval should be refactored in a later revision
   - I added network calls for the character(s) information as well... I wanted to display related character information and possibly link to related comics from the character selection. This could be an additional feature in a later release.
-  - I wanted the UI for the Comic Detail View to resemble as closely as possible to the production Marvel Unlimited app. I included buttons for **Read Now** and **Sign In** but they only display a Toast as of today... extended functionality can be added in a later release.
+  - I wanted the UI for the Comic Detail View to resemble as closely as possible to the production Marvel Unlimited apps (I took elements from both apps (Android and iOS) that I thought looked nice). I included buttons for **Read Now**, **Sign In**, and **Recommended Series** but they only display a Toast as of today... extended functionality can be added in a later release.
    
